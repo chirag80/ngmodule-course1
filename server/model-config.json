@@ -36,6 +36,7 @@
     "public": false
   },
   "Message": {
-    "dataSource": null
+    "dataSource": "mongodb",
+    "public": true
   }
 }

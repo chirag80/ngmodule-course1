@@ -2,5 +2,9 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mongodb": {
+    "connector": "loopback-connector-mongodb",
+    "url": "mongodb://chirag80:Learning2017@ds119020.mlab.com:19020/heroku_hkk9r8w4"
   }
 }

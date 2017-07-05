@@ -1,6 +1,17 @@
 module.exports = function (Message) {
   Message.greet = function (msg, cb) {
     process.nextTick(function () {
+
+      console.log('inside greet method')
+      Message.getDataSource().connector.connect(function (err, db) {
+        db.collection('products').find({}).toArray(function (err, results) {
+          console.log(JSON.stringify(results))
+          cb(null, results)
+        })
+      });
+
+      // console.log(mongodbConnection)
+
       var data = [{
         "firstName": "John",
         "lastName": "Smith",
@@ -93,8 +104,6 @@ module.exports = function (Message) {
           }
         ]
       }]
-
-      cb(null, data);
     });
   };
 };
